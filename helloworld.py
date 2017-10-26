@@ -170,3 +170,29 @@ sum=0
 for i in calories_file:
     sum += int(i.split(' ').pop(1))
 print(str(sum))
+############################################
+calories_file = open('calories_burn.txt','r')
+i = calories_file.readline()
+count,sum, space = 0,0, True
+for x in range(len(i)):
+    if(i[x]==';'):
+        count = count+1
+        space=False
+if(space==False):
+    calories_file.seek(0)
+    for i in calories_file:
+        i = int(i.split(';').pop(count))
+        sum += i
+elif(space==True):
+    calories_file.seek(0)
+    for i in calories_file:
+        i = int(i.split(' ').pop(len(i.split(' '))-1))
+        sum += i
+print(sum)
+######################################################
+t = [1,2,3,4,5,6,21,32,9,10,11,12]
+p=[]
+for i,n in enumerate(t):
+    print (i,n)
+    if(i!=0 and i!=1 and i!=len(t)-1 and i!=len(t)-2):
+        p.append(n)
