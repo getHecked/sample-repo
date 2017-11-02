@@ -196,3 +196,27 @@ for i,n in enumerate(t):
     print (i,n)
     if(i!=0 and i!=1 and i!=len(t)-1 and i!=len(t)-2):
         p.append(n)
+######################################################
+with('test1.txt', 'r') as input_file:
+    with('file2.txt', 'w') as output_file:
+        for line in input_file:
+            try:
+                line = str(line)
+                line = line.strip()
+                line = int(line)
+                output_file.write(line + '\n')
+            except:
+                continue
+#######################################################
+s = input().strip()
+# Your code goes here:
+words={}
+slist=s.replace("\W+",'')
+for element in slist:
+    if element in words:
+        words[element]+= 1
+    else:
+        words[element]=1
+n_chars = len(words)
+# Here is the output. Don’t modify the sentence.
+print(f'The number of different characters is: {n_chars}')
