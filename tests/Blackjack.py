@@ -1,7 +1,6 @@
 
 #BlackJack
 #######################################################################333
-import backend
 import random
 user_sum,bot_sum,user_choice = 0,0,0
 user_stand,bot_stand=False,False
